@@ -37,7 +37,7 @@ export default function Airdrop() {
       <Navbar />
       
       <div className="flex-grow flex flex-col items-center justify-center w-full px-6 text-center ">
-        <h1 className="text-4xl font-extrabold text-white">Airdrop</h1>
+        <h1 className="text-4xl font-extrabold text-white">XENX AIRDROP</h1>
         <p className="text-md text-gray-400 mt-3">
           Connect Discord and submit your wallet address to claim 10 XENX tokens.
         </p>
