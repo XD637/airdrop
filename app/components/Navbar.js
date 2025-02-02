@@ -1,46 +1,70 @@
 "use client";
 
 import { useSession, signIn, signOut } from "next-auth/react";
-import { useState } from "react";
-import { FaDiscord } from "react-icons/fa";
-import { ImSpinner2 } from "react-icons/im"; // Import the spinner icon
+import { useState, useEffect } from "react";
+import { FaDiscord, FaCube } from "react-icons/fa";
+import { ImSpinner2 } from "react-icons/im";
+import Link from "next/link";
 
 export default function Navbar() {
   const { data: session } = useSession();
   const [loading, setLoading] = useState(false);
+  const [scrollingDown, setScrollingDown] = useState(false);
+  const [prevScrollY, setPrevScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollingDown(window.scrollY > prevScrollY);
+      setPrevScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [prevScrollY]);
 
   const handleLogout = async () => {
-    setLoading(true); // Set loading to true when logout is triggered
-    await signOut(); // Call the signOut function
-    setLoading(false); // Reset loading after logout completes
+    setLoading(true);
+    await signOut();
+    setLoading(false);
   };
 
   return (
-    <nav className="w-full flex justify-between items-center p-6 bg-[#1c1c1e] text-white shadow-md fixed top-0 h-20 backdrop-blur-lg bg-opacity-30 border-b border-gray-300">
-      <h1 className="text-lg font-bold">XENX Airdrop</h1>
-      {!session ? (
-        <button
-          onClick={() => signIn("discord")}
-          className="px-4 py-2 bg-purple-600 text-white font-bold rounded-lg flex items-center gap-2"
+    <nav
+      className={`fixed top-0 left-0 w-full flex items-center justify-between px-10 py-6 z-50 backdrop-blur-lg bg-black/60 text-white border-b border-gray-700 transition-transform duration-300 ${
+        scrollingDown ? "-translate-y-24" : "translate-y-0"
+      }`}
+      style={{ height: "90px" }} // Taller navbar
+    >
+      <div className="text-3xl font-extrabold">
+        <Link href="/">XENX Airdrop</Link>
+      </div>
+
+      <div className="flex items-center gap-8">
+        <Link
+          href="https://polygonscan.com/token/0x0f29965ca5f1111b073efa37a739dd2fafab11e0"
+          target="_blank"
+          className="text-purple-400"
         >
-          <FaDiscord size={18} /> Connect
-        </button>
-      ) : (
-        <div className="flex items-center gap-4">
-          <p className="text-sm">{session.user.name}</p>
+          <FaCube size={24} />
+        </Link>
+
+        {!session ? (
+          <button
+            onClick={() => signIn("discord")}
+            className="px-5 py-2 bg-purple-600 text-white font-bold rounded-lg flex items-center gap-2 text-lg"
+          >
+            <FaDiscord size={20} /> Connect
+          </button>
+        ) : (
           <button
             onClick={handleLogout}
-            className="text-purple-400 underline text-sm flex items-center gap-2"
-            disabled={loading} // Disable button while loading
+            className="text-purple-400 text-md flex items-center gap-2"
+            disabled={loading}
           >
-            {loading ? (
-              <ImSpinner2 className="animate-spin text-purple-400" size={16} /> // Show spinner while loading
-            ) : (
-              "Logout"
-            )}
+            {loading ? <ImSpinner2 className="animate-spin" size={18} /> : "Logout"}
           </button>
-        </div>
-      )}
+        )}
+      </div>
     </nav>
   );
 }

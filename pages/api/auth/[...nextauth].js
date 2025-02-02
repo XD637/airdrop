@@ -6,19 +6,23 @@ export default NextAuth({
     DiscordProvider({
       clientId: process.env.DISCORD_CLIENT_ID,
       clientSecret: process.env.DISCORD_CLIENT_SECRET,
-      authorization: { params: { scope: "identify guilds" } }, // Ensure 'guilds' scope is included
+      authorization: { params: { scope: "identify email guilds" } }, // Added 'email' scope
     }),
   ],
   callbacks: {
-    async jwt({ token, account }) {
+    async jwt({ token, account, profile }) {
       if (account) {
-        token.accessToken = account.access_token; // Store Discord access token in JWT
+        token.accessToken = account.access_token;
+      }
+      if (profile) {
+        token.email = profile.email; // Store email in token
       }
       return token;
     },
     async session({ session, token }) {
       session.user.id = token.sub;
-      session.accessToken = token.accessToken; // Expose access token to the session
+      session.user.email = token.email; // Add email to session
+      session.accessToken = token.accessToken;
       return session;
     },
   },

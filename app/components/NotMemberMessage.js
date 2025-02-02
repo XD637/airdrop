@@ -6,13 +6,12 @@ export default function NotMemberMessage() {
   const [showNote, setShowNote] = useState(false);
 
   const handleJoinClick = () => {
-    // Redirect to Discord and show the note
     window.open("https://discord.gg/DwpdM3nbvJ", "_blank");
     setShowNote(true);
   };
 
   return (
-    <div className="mt-6 text-center">
+    <div className="mt-6 text-center bg-black/60 p-6 rounded-lg">
       <p className="text-purple-500 font-semibold">
         You must join our Discord to claim the airdrop!
       </p>
@@ -24,7 +23,7 @@ export default function NotMemberMessage() {
       </button>
       {showNote && (
         <p className="mt-4 text-sm text-gray-400">
-          If you&apos;re joined, Please refresh this page ...
+          If you&apos;re joined, please refresh this page...
         </p>
       )}
     </div>

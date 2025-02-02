@@ -9,18 +9,13 @@
   font-style: normal;
 }
 
+/* Force Dark Theme */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;  /* Permanent dark background */
+  --foreground: #ededed;  /* Light text for contrast */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Apply Colors to Body */
 body {
   color: var(--foreground);
   background: var(--background);
@@ -29,4 +24,3 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
