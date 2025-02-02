@@ -6,9 +6,10 @@ export default NextAuth({
     DiscordProvider({
       clientId: process.env.DISCORD_CLIENT_ID,
       clientSecret: process.env.DISCORD_CLIENT_SECRET,
-      authorization: { params: { scope: "identify email guilds" } }, // Added 'email' scope
+      authorization: { params: { scope: "identify email guilds" } },
     }),
   ],
+  secret: process.env.NEXTAUTH_SECRET, // Add the secret here
   callbacks: {
     async jwt({ token, account, profile }) {
       if (account) {

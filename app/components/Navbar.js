@@ -36,7 +36,7 @@ export default function Navbar() {
       style={{ height: "90px" }} // Taller navbar
     >
       <div className="text-3xl font-extrabold">
-        <Link href="/">XENX Airdrop</Link>
+        <Link href="/">XENX AIRDROP</Link>
       </div>
 
       <div className="flex items-center gap-8">
