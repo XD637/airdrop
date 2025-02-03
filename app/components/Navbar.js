@@ -42,8 +42,10 @@ export default function Navbar() {
       <div className="flex items-center gap-8">
         <Link
           href="https://polygonscan.com/token/0x0f29965ca5f1111b073efa37a739dd2fafab11e0"
+          aria-label="View the Xennium token on PolygonScan"
           target="_blank"
           className="text-purple-400"
+
         >
           <FaCube size={24} />
         </Link>
