@@ -3,14 +3,14 @@
 import { useSession } from "next-auth/react";
 import { useState, useEffect, useRef } from "react";
 import Head from "next/head"; // SEO
-import Image from "next/image"; // For optimized image handling
+import Image from "next/image"; // Optimized image handling
 import Navbar from "./components/Navbar";
 import AuthButton from "./components/AuthButton";
 import AirdropForm from "./components/AirdropForm";
 import LoadingSpinner from "./components/LoadingSpinner";
 import NotMemberMessage from "./components/NotMemberMessage";
 import Footer from "./components/Footer";
-import Link from "next/link"; // Import Link from next/link
+import Link from "next/link"; // Internal linking
 
 export default function Airdrop() {
   const { data: session } = useSession();
@@ -18,8 +18,6 @@ export default function Airdrop() {
   const [loading, setLoading] = useState(false);
   const [airdropLoading, setAirdropLoading] = useState(false);
   const lastCheckedRef = useRef(null);
-  const [isPrivacyPolicyOpen, setIsPrivacyPolicyOpen] = useState(false);
-  const [isTermsOpen, setIsTermsOpen] = useState(false);
 
   useEffect(() => {
     if (session) {
@@ -48,16 +46,16 @@ export default function Airdrop() {
         />
         <meta
           name="keywords"
-          content="Xennium, XENX, airdrop, free crypto, blockchain, crypto rewards"
+          content="Airdrop, Free crypto, XENX tokens, Crypto rewards, NFTs, Web3 airdrop"
         />
         <meta name="author" content="Xennium Team" />
         <meta name="robots" content="index, follow" />
 
-        {/* Open Graph / Facebook */}
+        {/* Open Graph (Facebook) */}
         <meta property="og:title" content="Xennium Airdrop - Claim Free XENX Tokens" />
         <meta
           property="og:description"
-          content="Claim your free XENX tokens! Connect Discord and submit your wallet to receive 10 XENX tokens instantly."
+          content="Claim free XENX tokens by connecting Discord. Secure, easy, and instant rewards!"
         />
         <meta property="og:image" content="/images/airdrop-banner.webp" />
         <meta property="og:url" content="https://airdrop.xennium.org" />
@@ -68,23 +66,37 @@ export default function Airdrop() {
         <meta name="twitter:title" content="Xennium Airdrop - Claim Free XENX Tokens" />
         <meta
           name="twitter:description"
-          content="Claim your free XENX tokens! Connect Discord and submit your wallet to receive 10 XENX tokens instantly."
+          content="Claim free XENX tokens by connecting Discord. Secure, easy, and instant rewards!"
         />
         <meta name="twitter:image" content="/images/airdrop-banner.webp" />
         <meta name="twitter:site" content="@Xenniumx" />
 
         {/* Canonical URL */}
         <link rel="canonical" href="https://airdrop.xennium.org" />
+
+        {/* Structured Data for SEO */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Xennium Airdrop",
+            "url": "https://airdrop.xennium.org",
+            "description":
+              "Claim free XENX tokens by connecting Discord. Secure, easy, and instant rewards!",
+            "image": "https://airdrop.xennium.org/images/airdrop-banner.webp",
+            "author": { "@type": "Organization", "name": "Xennium" },
+          })}
+        </script>
       </Head>
 
       <div className="min-h-screen flex flex-col bg-black/60 text-gray-200">
         <Navbar />
 
         <main className="flex-grow flex flex-col items-center justify-center w-full px-6 text-center">
-          <h1 className="text-4xl font-extrabold text-white">XENX AIRDROP</h1>
-          <p className="text-md text-gray-400 mt-3">
-            Connect Discord and submit your wallet address to claim 10 XENX tokens.
-          </p>
+          <h1 className="text-4xl font-extrabold text-white">Claim Your Free XENX Tokens</h1>
+          <h2 className="text-md text-gray-400 mt-3">
+            Connect Discord and submit your wallet address to claim 10 XENX tokens instantly.
+          </h2>
 
           <section className="mt-6">
             {session ? (
@@ -103,13 +115,18 @@ export default function Airdrop() {
               <AuthButton />
             )}
           </section>
+
+          {/* Privacy Policy & Terms */}
           <div className="mt-6 text-center">
-  {/* Add Privacy Policy and Terms & Conditions links */}
-  <div className="text-gray-400">
-    <Link href="/privacy-policy" className="text-purple-400 hover:text-purple-600 mr-4">Privacy Policy</Link>
-    <Link href="/terms-and-conditions" className="text-purple-400 hover:text-purple-600">Terms & Conditions</Link>
-  </div>
-</div>
+            <div className="text-gray-400">
+              <Link href="/privacy-policy" prefetch={true} className="text-purple-400 hover:text-purple-600 mr-4">
+                Privacy Policy
+              </Link>
+              <Link href="/terms-and-conditions" prefetch={true} className="text-purple-400 hover:text-purple-600">
+                Terms & Conditions
+              </Link>
+            </div>
+          </div>
         </main>
 
         <Footer />
