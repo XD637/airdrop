@@ -95,7 +95,7 @@ export default function Airdrop() {
         <main className="flex-grow flex flex-col items-center justify-center w-full px-6 text-center">
           <h1 className="text-4xl font-extrabold text-white">Claim Your Free XENX Tokens</h1>
           <h2 className="text-md text-gray-400 mt-3">
-            Connect Discord and submit your wallet address to claim 10 XENX tokens instantly.
+            Connect Discord and submit your wallet address to claim 10 XENX Tokens for Free.
           </h2>
 
           <section className="mt-6">
