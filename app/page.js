@@ -57,7 +57,6 @@ export default function Airdrop() {
           property="og:description"
           content="Claim free XENX tokens by connecting Discord. Secure, easy, and instant rewards!"
         />
-        <meta property="og:image" content="/images/airdrop-banner.webp" />
         <meta property="og:url" content="https://airdrop.xennium.org" />
         <meta property="og:type" content="website" />
 
@@ -68,7 +67,6 @@ export default function Airdrop() {
           name="twitter:description"
           content="Claim free XENX tokens by connecting Discord. Secure, easy, and instant rewards!"
         />
-        <meta name="twitter:image" content="/images/airdrop-banner.webp" />
         <meta name="twitter:site" content="@Xenniumx" />
 
         {/* Canonical URL */}
@@ -83,7 +81,6 @@ export default function Airdrop() {
             "url": "https://airdrop.xennium.org",
             "description":
               "Claim free XENX tokens by connecting Discord. Secure, easy, and instant rewards!",
-            "image": "https://airdrop.xennium.org/images/airdrop-banner.webp",
             "author": { "@type": "Organization", "name": "Xennium" },
           })}
         </script>

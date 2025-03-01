@@ -19,7 +19,6 @@ export default function RootLayout({ children }) {
         {/* Open Graph Meta Tags (For Social Sharing) */}
         <meta property="og:title" content="Xennium Airdrop | Free XENX Crypto Giveaway" />
         <meta property="og:description" content="Claim your free XENX tokens now! Connect Discord, submit your wallet, and receive 10 XENX instantly." />
-        <meta property="og:image" content="/images/airdrop-banner.webp" />
         <meta property="og:url" content="https://airdrop.xennium.org" />
         <meta property="og:type" content="website" />
 
@@ -40,7 +39,6 @@ export default function RootLayout({ children }) {
           "name": "Xennium Airdrop",
           "url": "https://airdrop.xennium.org",
           "description": "Claim your free XENX tokens now! Connect Discord, submit your wallet, and receive 10 XENX instantly.",
-          "image": "https://airdrop.xennium.org/images/airdrop-banner.webp"
         }) }} />
 
         {/* Performance Optimizations */}
