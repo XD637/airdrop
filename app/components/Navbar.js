@@ -30,7 +30,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full flex items-center justify-between px-10 py-6 z-50 backdrop-blur-lg bg-black/60 text-white border-b border-gray-700 transition-transform duration-300 ${
+      className={`fixed top-0 left-0 w-full flex items-center justify-between px-10 py-6 z-50 backdrop-blur-lg bg-gray-100 text-black border-b border-gray-300 transition-transform duration-300 ${
         scrollingDown ? "-translate-y-24" : "translate-y-0"
       }`}
       style={{ height: "90px" }} // Taller navbar
@@ -44,8 +44,7 @@ export default function Navbar() {
           href="https://polygonscan.com/token/0x0f29965ca5f1111b073efa37a739dd2fafab11e0"
           aria-label="View the Xennium token on PolygonScan"
           target="_blank"
-          className="text-purple-400"
-
+          className="text-purple-600"
         >
           <FaCube size={24} />
         </Link>
@@ -60,7 +59,7 @@ export default function Navbar() {
         ) : (
           <button
             onClick={handleLogout}
-            className="text-purple-400 text-md flex items-center gap-2"
+            className="text-purple-600 text-md flex items-center gap-2"
             disabled={loading}
           >
             {loading ? <ImSpinner2 className="animate-spin" size={18} /> : "Logout"}

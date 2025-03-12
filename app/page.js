@@ -86,12 +86,14 @@ export default function Airdrop() {
         </script>
       </Head>
 
-      <div className="min-h-screen flex flex-col bg-black/60 text-gray-200">
+      <div className="min-h-screen flex flex-col bg-gray-100 text-black">
+        <div className="pb-10">
         <Navbar />
+        </div>
 
-        <main className="flex-grow flex flex-col items-center justify-center w-full px-6 text-center">
-          <h1 className="text-4xl font-extrabold text-white">Claim Your Free XENX Tokens</h1>
-          <h2 className="text-md text-gray-400 mt-3">
+        <main className="flex-grow flex flex-col items-center justify-center w-full px-6 text-center ">
+          <h1 className="text-6xl font-extrabold text-black pb-6">Xennium Airdrop</h1>
+          <h2 className="text-md text-gray-800 mt-3">
             Connect Discord and submit your wallet address to claim 10 XENX Tokens for Free.
           </h2>
 
@@ -116,10 +118,10 @@ export default function Airdrop() {
           {/* Privacy Policy & Terms */}
           <div className="mt-6 text-center">
             <div className="text-gray-400">
-              <Link href="/privacy-policy" prefetch={true} className="text-purple-400 hover:text-purple-600 mr-4">
+              <Link href="/privacy-policy" prefetch={true} className="text-purple-600 hover:text-purple-800 mr-4">
                 Privacy Policy
               </Link>
-              <Link href="/terms-and-conditions" prefetch={true} className="text-purple-400 hover:text-purple-600">
+              <Link href="/terms-and-conditions" prefetch={true} className="text-purple-600 hover:text-purple-800">
                 Terms & Conditions
               </Link>
             </div>

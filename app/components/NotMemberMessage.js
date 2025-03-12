@@ -1,17 +1,15 @@
 "use client";
 
-import { useState } from "react";
+
 
 export default function NotMemberMessage() {
-  const [showNote, setShowNote] = useState(false);
 
   const handleJoinClick = () => {
-    window.open("https://discord.gg/DwpdM3nbvJ", "_blank");
-    setShowNote(true);
+    window.open("https://discord.com/invite/7KmMBrrJEz", "_blank");
   };
 
   return (
-    <div className="mt-6 text-center bg-black/60 p-6 rounded-lg">
+    <div className="mt-6 text-center bg-gray-100 text-black p-6 rounded-lg">
       <p className="text-purple-500 font-semibold">
         You must join our Discord to claim the airdrop!
       </p>
@@ -21,11 +19,10 @@ export default function NotMemberMessage() {
       >
         Join Discord
       </button>
-      {showNote && (
-        <p className="mt-4 text-sm text-gray-400">
-          If you&apos;re joined, please refresh this page...
+     
+        <p className="mt-4 text-sm font-semibold text-gray-700">
+         Important Note: After joining, please refresh this page!
         </p>
-      )}
     </div>
   );
 }

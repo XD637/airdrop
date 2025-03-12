@@ -3,8 +3,8 @@ import Link from 'next/link'; // Import Link from next/link
 
 export default function TermsAndConditionsPage() {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-black/60 text-white">
-      <div className="p-6 bg-black text-white rounded-lg shadow-lg w-full sm:w-3/4 md:w-2/3 lg:w-full">
+    <div className="flex items-center justify-center min-h-screen bg-gray-100 text-black ">
+      <div className="p-6 bg-gray-100 text-black rounded-lg shadow-lg w-full sm:w-3/4 md:w-2/3 lg:w-full">
         <h2 className="text-2xl font-extrabold text-center mb-4">Terms and Conditions</h2>
 
         <h3 className="font-semibold mt-4">1. Acceptance of Terms</h3>
@@ -47,10 +47,10 @@ export default function TermsAndConditionsPage() {
         <p>These Terms and Conditions are governed by the laws of India.</p>
 
         <h3 className="font-semibold mt-4">11. Contact Us</h3>
-        <p>If you have any questions about these Terms and Conditions, please contact us at <a href="mailto:contact@xennium.org" className="text-purple-400">contact@xennium.org</a>.</p>
+        <p>If you have any questions about these Terms and Conditions, please contact us at <a href="mailto:contact@xennium.org" className="text-purple-700">contact@xennium.org</a>.</p>
 
         <div className="mt-4 text-center">
-          <Link href="/" className="bg-purple-500 text-white py-2 px-4 rounded hover:bg-purple-700">
+          <Link href="/" className="bg-purple-700 text-white py-2 px-4 rounded hover:bg-purple-800">
             Go Back
           </Link>
         </div>
