@@ -76,12 +76,43 @@ export default function Airdrop() {
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "WebSite",
+            "@type": "Event",
             "name": "Xennium Airdrop",
-            "url": "https://airdrop.xennium.org",
+            "startDate": "2025-03-20T00:00:00Z",
+            "eventStatus": "https://schema.org/EventScheduled",
+            "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
             "description":
-              "Claim free XENX tokens by connecting Discord. Secure, easy, and instant rewards!",
-            "author": { "@type": "Organization", "name": "Xennium" },
+              "Claim free XENX tokens by connecting Discord and submitting your wallet.",
+            "organizer": {
+              "@type": "Organization",
+              "name": "Xennium",
+              "url": "https://xennium.org"
+            }
+          })}
+        </script>
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How do I claim the airdrop?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Simply connect your Discord and submit your wallet address."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "When will I receive my XENX tokens?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Tokens are distributed instantly after verification."
+                }
+              }
+            ]
           })}
         </script>
       </Head>
